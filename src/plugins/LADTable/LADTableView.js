@@ -78,5 +78,6 @@ export default class LADTableView {
     if (this._destroy) {
       this._destroy();
     }
+    this.component = null;
   }
 }
