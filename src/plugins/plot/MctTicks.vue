@@ -271,12 +271,14 @@ export default {
             )
           );
 
-          this.tickWidth = tickWidth;
-          this.$emit('plot-tick-width', {
-            width: tickWidth,
-            yAxisId: this.axisType === 'yAxis' ? this.axisId : ''
-          });
-          this.shouldCheckWidth = false;
+          if (this.tickWidth !== tickWidth) {
+            this.tickWidth = tickWidth;
+            this.$emit('plot-tick-width', {
+              width: tickWidth,
+              yAxisId: this.axisType === 'yAxis' ? this.axisId : ''
+            });
+            this.shouldCheckWidth = false;
+          }
         }
       }
 
